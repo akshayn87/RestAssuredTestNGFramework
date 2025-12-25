@@ -27,6 +27,11 @@ public class PlaylistApi {
         return RestResource.get(PLAYLISTS + "/" + playlistId, getToken());
     }
 
+    public static Response getall(String playlistId){
+        return RestResource.get(USERS + "/" + ConfigLoader.getInstance().getUser()
+                + PLAYLISTS + "/", getToken());
+    }
+
     public static Response update(String playlistId, Playlist requestPlaylist){
         return RestResource.update(PLAYLISTS + "/" + playlistId, getToken(), requestPlaylist);
     }

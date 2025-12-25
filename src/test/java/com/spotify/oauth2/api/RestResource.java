@@ -24,8 +24,8 @@ public class RestResource {
     public static Response postAccount(HashMap<String, String> formParams){
         return given(getAccountRequestSpec()).
                 formParams(formParams).
-        when().post(API + TOKEN).
-        then().spec(getResponseSpec()).
+                when().post(API + TOKEN).
+                then().spec(getResponseSpec()).
                 extract().
                 response();
     }

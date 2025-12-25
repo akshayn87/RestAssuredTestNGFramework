@@ -10,15 +10,17 @@ import io.restassured.specification.ResponseSpecification;
 
 import static com.spotify.oauth2.api.Route.BASE_PATH;
 import static com.spotify.oauth2.api.Route.BASE_URI;
-//import static com.spotify.oauth2.api.Route.ACCOUNT_BASE_URI;
+import static com.spotify.oauth2.api.Route.TOKEN;
+import static com.spotify.oauth2.api.Route.API;
+import static com.spotify.oauth2.api.Route.ACCOUNT_BASE_URI;
 
 
 public class SpecBuilder {
 
     public static RequestSpecification getRequestSpec(){
         return new RequestSpecBuilder().
-               // setBaseUri(BASE_URI).
-               setBaseUri("https://api.spotify.com").
+                setBaseUri(BASE_URI).
+              // setBaseUri("https://api.spotify.com").
                 setBasePath(BASE_PATH).
                 setContentType(ContentType.JSON).
                 addFilter(new AllureRestAssured()).
@@ -28,8 +30,12 @@ public class SpecBuilder {
 
     public static RequestSpecification getAccountRequestSpec(){
         return new RequestSpecBuilder().
-                // setBaseUri(System.getProperty("ACCOUNT_BASE_URI")).
-               setBaseUri("https://accounts.spotify.com").
+                setBaseUri(ACCOUNT_BASE_URI).
+                //setBaseUri(System.getProperty("ACCOUNT_BASE_URI")).
+               //setBaseUri("https://accounts.spotify.com").
+                //setBasePath(API +TOKEN).
+                //In the method post Account the API and Token are passed
+                //RestResource.postAccount
                 setContentType(ContentType.URLENC).
                 addFilter(new AllureRestAssured()).
                 log(LogDetail.ALL).
