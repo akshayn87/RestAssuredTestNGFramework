@@ -1,0 +1,20 @@
+What is API?
+Application Programming Interface 
+This is the interface to talk two applications together
+consider 
+client (front end)server (back end)
+API is used to talk to client and server
+Why to use API?
+Client and Server uses different languages 
+Suppose Client understand HTML, CSS and JavaScript 
+and Server understand 
+java python pho
+API provides common interface which can be understood by both frontend and backend 
+For flight booking Application Expedia.co.in
+search flight mumbai to Newyork
+So I can see different flights and how?
+This is because of API
+Expedia connects with British Airways and Delta in backend and display on frontend to user
+Social Login
+Use your Gmail for third party login such as linkedin,postman and many more 
+All this is possible due to Gmail exposes the API to different applications 
